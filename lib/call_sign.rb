@@ -1,5 +1,5 @@
-require "call_sign/version"
+require 'call_sign/call_sign'
+require 'call_sign/version'
 
 module CallSign
-  # Your code goes here...
 end
