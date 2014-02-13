@@ -7,7 +7,7 @@ module CallSign
       @text = call_sign
       components = CallSign.extract(call_sign)
 
-      if components && components.is_a? Hash
+      if components.is_a? Hash
         @call_sign = components[:text]
         @prefix    = components[:prefix]
         @separator = components[:separator]
