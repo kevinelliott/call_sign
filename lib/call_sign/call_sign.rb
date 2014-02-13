@@ -4,13 +4,13 @@ module CallSign
     EXTRACT_REGEX = /^(?<prefix>[BFGIKMNRW]{1}|[A-Z]{1}[0-9]{1}|[0-9][A-Z]|[A-Z]|[0-9A-Z]{3})(?<separator>[0-9]{1})(?<suffix>[0-9A-Z]{1,5})$/
 
     def initialize(call_sign)
-      @text = call_sign
       components = CallSign.extract(call_sign)
 
       if components.is_a? Hash
         @call_sign = components[:text]
         @prefix    = components[:prefix]
         @separator = components[:separator]
+        @suffix    = components[:suffix]
         @text      = components[:text]
         @valid     = true
       else
@@ -18,6 +18,7 @@ module CallSign
         @prefix    = nil
         @separator = nil
         @suffix    = nil
+        @text      = call_sign
         @valid     = false
       end
     end
