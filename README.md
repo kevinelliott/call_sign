@@ -1,6 +1,8 @@
 # call_sign
 
-TODO: Write a gem description
+Ruby gems to handle and process international call signs. Initial release adds support for detection of ITU amateur radio license prefixes.
+
+![Gem Version](https://badge.fury.io/rb/call_sign.png)
 
 ## Installation
 
