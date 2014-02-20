@@ -7,19 +7,20 @@ module CallSign
       components = CallSign.extract(call_sign)
 
       if components.is_a? Hash
-        @call_sign = components[:text]
-        @prefix    = components[:prefix]
-        @separator = components[:separator]
-        @suffix    = components[:suffix]
-        @text      = components[:text]
-        @valid     = true
+        @call_sign        = components[:text]
+        @prefix           = ITUPrefix.parse(components[:prefix])          
+        @prefix_string    = components[:prefix]
+        @separator_string = components[:separator]
+        @suffix_string    = components[:suffix]
+        @text             = components[:text]
+        @valid            = true
       else
-        @call_sign = nil
-        @prefix    = nil
-        @separator = nil
-        @suffix    = nil
-        @text      = call_sign
-        @valid     = false
+        @call_sign        = nil
+        @prefix_string    = nil
+        @separator_string = nil
+        @suffix_string    = nil
+        @text             = call_sign
+        @valid            = false
       end
     end
 
