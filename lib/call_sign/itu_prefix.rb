@@ -227,9 +227,10 @@ module CallSign
       end
     end
 
+    attr_reader :country, :prefix
+
     def initialize(prefix='')
       identity = identify(prefix)
-      puts identity
 
       if identity.is_a? Hash
         @country = ISO3166::Country.find_country_by_alpha3(identity[:iso_3166_alpha_3])
@@ -241,9 +242,13 @@ module CallSign
         @valid   = false
       end
     end
-    
+
     def identify(prefix)
       PREFIXES[prefix]
+    end
+
+    def valid?
+      @valid
     end
 
     def self.parse(prefix)

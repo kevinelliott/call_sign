@@ -1,14 +1,16 @@
 module CallSign
   class CallSign
 
-    EXTRACT_REGEX = /^(?<prefix>[BFGIKMNRW]{1}|[A-Z]{1}[0-9]{1}|[0-9][A-Z]|[A-Z]|[0-9A-Z]{3})(?<separator>[0-9]{1})(?<suffix>[0-9A-Z]{1,5})$/
+    EXTRACT_REGEX = /^(?<prefix>[BFGIKMNRW]{1}|[A-Z][A-Z]|[A-Z]{1}[0-9]{1}|[0-9][A-Z]|[A-Z]|[0-9A-Z]{3})(?<separator>[0-9]{1})(?<suffix>[0-9A-Z]{1,5})$/
+
+    attr_reader :call_sign, :prefix, :prefix_string, :separator_string, :suffix_string
 
     def initialize(call_sign)
       components = CallSign.extract(call_sign)
 
       if components.is_a? Hash
         @call_sign        = components[:text]
-        @prefix           = ITUPrefix.parse(components[:prefix])          
+        @prefix           = ITUPrefix.parse(components[:prefix])
         @prefix_string    = components[:prefix]
         @separator_string = components[:separator]
         @suffix_string    = components[:suffix]
@@ -22,6 +24,10 @@ module CallSign
         @text             = call_sign
         @valid            = false
       end
+    end
+
+    def country
+      valid? && prefix && prefix.country ? prefix.country : nil
     end
 
     def valid?
