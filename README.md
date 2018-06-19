@@ -1,5 +1,6 @@
+To support my open-source work, consider [adding me on Patreon](https://www.patreon.com/kevinelliott).
+
 # call_sign
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/kevinelliott/call_sign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Ruby gem to handle and process international call signs. Currently only handles amateur call signs.
 
