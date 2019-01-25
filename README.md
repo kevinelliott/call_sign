@@ -5,6 +5,7 @@ To support my open-source work, consider [adding me on Patreon](https://www.patr
 Ruby gem to handle and process international call signs. Currently only handles amateur call signs.
 
 ![Gem Version](https://badge.fury.io/rb/call_sign.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkevinelliott%2Fcall_sign.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkevinelliott%2Fcall_sign?ref=badge_shield)
 
 Related: [kevinelliott/irlp](https://github.com/kevinelliott/irlp) and [kevinelliott/echo_link](https://github.com/kevinelliott/echo_link)
 
@@ -37,3 +38,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkevinelliott%2Fcall_sign.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkevinelliott%2Fcall_sign?ref=badge_large)
